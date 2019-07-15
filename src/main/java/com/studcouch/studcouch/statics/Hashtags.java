@@ -1,5 +1,10 @@
 package com.studcouch.studcouch.statics;
 
+import lombok.Getter;
+import lombok.ToString;
+
+@Getter
+@ToString
 public enum Hashtags {
 
     WHO_WITH_ME("хто_зі_мною"),
@@ -17,17 +22,4 @@ public enum Hashtags {
     Hashtags(String text) {
         this.text = text;
     }
-
-    public String getText() {
-        return text;
-    }
-
-    @Override
-    public String toString() {
-        return "Hashtags{" +
-                "text='" + text + '\'' +
-                '}';
-    }
-
-
 }

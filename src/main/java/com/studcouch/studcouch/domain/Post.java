@@ -1,13 +1,11 @@
 package com.studcouch.studcouch.domain;
 
-import com.studcouch.studcouch.statics.Hashtags;
 import lombok.Data;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.util.List;
 
 @Entity
 @Data
@@ -17,6 +15,7 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    //commented because need to write joins, coz hibernate can't create such kind of structure (coz list can not be at column)
     //private List<Hashtags> hashtags;
 
     private String text;
