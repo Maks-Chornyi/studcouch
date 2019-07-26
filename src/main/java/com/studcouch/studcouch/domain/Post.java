@@ -15,9 +15,6 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    //commented because need to write joins, coz hibernate can't create such kind of structure (coz list can not be at column)
-    //private List<Hashtags> hashtags;
-
     private String text;
 
     private String contacts;
