@@ -2,14 +2,9 @@ package com.studcouch.studcouch.domain;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.validation.constraints.Null;
-import javax.validation.constraints.Past;
+import javax.persistence.*;
 import javax.validation.constraints.Size;
-import java.util.Date;
+import java.util.Set;
 
 @Data
 @Entity
@@ -22,7 +17,9 @@ public class User {
     @Size(min = 2, message = "Name should have at least 2 characters")
     private String name;
 
-    @Past
-    private Date birth;
+    private String birth;
+
+    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
+    private Set<Post> posts;
 
 }

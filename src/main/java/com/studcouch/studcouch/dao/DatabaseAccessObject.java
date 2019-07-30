@@ -5,7 +5,6 @@ import com.studcouch.studcouch.exception.UserNotFoundException;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -13,29 +12,6 @@ import java.util.Optional;
 public class DatabaseAccessObject {
     private static List<User> users = new ArrayList<>();
     private static long userCount;
-
-    static {
-        User user1 = new User();
-        user1.setId(1L);
-        user1.setName("name1");
-        user1.setBirth(new Date());
-
-        User user2 = new User();
-        user2.setId(2L);
-        user2.setName("name2");
-        user2.setBirth(new Date());
-
-        User user3 = new User();
-        user3.setId(3L);
-        user3.setName("name3");
-        user3.setBirth(new Date());
-
-        users.add(user1);
-        users.add(user2);
-        users.add(user3);
-
-        userCount = users.size();
-    }
 
     public List<User> getAllUsers() {
         return users;
